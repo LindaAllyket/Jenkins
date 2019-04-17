@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "This is the script to install Jenkins"
+sudo apt update #ensure that the system is up to date
+sudo apt install openjdk-8-jdk #installs Java
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add - #imports the GDP keys of Jenkins repository
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' #adds Jenkins' repository
+sudo apt update #reupdates the system with the latest installations
+sudo apt install jenkins #installs Jenkins
